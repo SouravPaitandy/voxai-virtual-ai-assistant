@@ -27,3 +27,8 @@ dist
 *.sw?
 
 .vercel
+public/avatar.png
+public/giphy.gif
+public/Designer (1).png
+public/Designer (3).png
+
