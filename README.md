@@ -6,11 +6,11 @@ VoxAI is an AI-powered assistant application built with React and Vite. It uses 
 ## Installation
 1. Clone the repository:
    ```
-   git clone https://github.com/your-username/jarvis-project.git
+   git clone https://github.com/SouravPaitandy/voxai-virtual-ai-assistant
    ```
 2. Navigate to the project directory:
    ```
-   cd jarvis-project
+   cd voxai-project
    ```
 3. Install dependencies:
    ```
@@ -31,10 +31,7 @@ npm run dev
 ```
 
 ## Deployment
-The application is deployed on GitHub Pages. The deployment is handled automatically through a GitHub Actions workflow.
+The application is deployed on Vercel. The deployment is handled automatically through Vercel's workflow.
 
 ## Contributing
 Pull requests are always welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
