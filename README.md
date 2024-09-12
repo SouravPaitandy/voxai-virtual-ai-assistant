@@ -6,7 +6,7 @@ VoxAI is an AI-powered assistant application built with React and Vite. It uses 
 ## Installation
 1. Clone the repository:
    ```
-   git clone https://github.com/SouravPaitandy/voxai-virtual-ai-assistant
+   git clone https://github.com/SouravPaitandy/voxai-virtual-ai-assistant.git
    ```
 2. Navigate to the project directory:
    ```
