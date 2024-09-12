@@ -1,0 +1,88 @@
+.ai-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+    background: linear-gradient(to bottom right, #000000, #1a1a2e, #16213e);
+  }
+  
+  .pulse-bit {
+    position: absolute;
+    background: radial-gradient(circle, rgba(0,255,255,0.1) 0%, rgba(0,255,255,0) 70%);
+    border-radius: 50%;
+    animation: pulse 4s infinite;
+  }
+  
+  .pulse-bit:nth-child(1) {
+    width: 300px;
+    height: 300px;
+    left: 10%;
+    top: 20%;
+    animation-delay: 0s;
+  }
+  
+  .pulse-bit:nth-child(2) {
+    width: 200px;
+    height: 200px;
+    right: 15%;
+    top: 30%;
+    animation-delay: 1s;
+  }
+  
+  .pulse-bit:nth-child(3) {
+    width: 250px;
+    height: 250px;
+    left: 20%;
+    bottom: 20%;
+    animation-delay: 2s;
+  }
+  
+  .pulse-bit:nth-child(4) {
+    width: 180px;
+    height: 180px;
+    right: 25%;
+    bottom: 15%;
+    animation-delay: 3s;
+  }
+  
+  .pulse-bit:nth-child(5) {
+    width: 220px;
+    height: 220px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation-delay: 2.5s;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      opacity: 0.3;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 0.5;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 0.3;
+    }
+  }
+  
+  /* Add a subtle network-like pattern */
+  .ai-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      linear-gradient(to right, rgba(0,255,255,0.1) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0,255,255,0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.2;
+  }
