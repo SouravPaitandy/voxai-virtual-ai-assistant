@@ -117,7 +117,7 @@ const LandingPage = () => {
               <div className="relative">
                 <div className="absolute inset-0 bg-blue-600 rounded-lg blur group-hover:blur-md transition-all duration-300" />
                 {/* <Volume2 className="w-8 h-8 text-white relative z-10 transform group-hover:scale-110 transition-transform duration-300" /> */}
-                <img src="Designer (2).png" alt="X" className="w-8 h-8 relative z-10 transform group-hover:scale-110 transition-transform duration-300"/>
+                <img src="Designer(2).png" alt="X" className="w-8 h-8 relative z-10 transform group-hover:scale-110 transition-transform duration-300"/>
               </div>
               <span className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent
                 transition-all duration-300 group-hover:from-purple-600 group-hover:to-blue-600">
@@ -658,7 +658,7 @@ const LandingPage = () => {
             <div className="md:col-span-4">
               <div className="flex items-center gap-2 mb-4">
                 {/* <Mic className="w-8 h-8 text-blue-500" /> */}
-                <img src="Designer (2).png" alt="V" className='w-8 h-8' />
+                <img src="Designer(2).png" alt="V" className='w-8 h-8' />
                 <h3 className="text-white text-2xl font-bold">VoxAI</h3>
               </div>
               <p className="text-gray-400 mb-6 pr-4">
