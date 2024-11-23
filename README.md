@@ -123,7 +123,7 @@ Please ensure your PR adheres to the following guidelines:
 
 ## 📞 Contact
 
-Sourav Paitandy - []()
+[Portfolio Website](https://portfolio-sourav-paitandy.vercel.app/ "Visit my Website") ,  [Email](mailto:souravpaitandy.work.gmail.com?subject=Support/Query%20for%20VoxAI%20Assistant "Contact via email")
 
 Project Link: [https://github.com/SouravPaitandy/voxai-virtual-ai-assistant](https://github.com/SouravPaitandy/voxai-virtual-ai-assistant)
 
