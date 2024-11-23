@@ -1,6 +1,6 @@
 export const customAnswers = {
     "hello": "Hello! How can I assist you today?",
-    "hi": "Hi there! What can I do for you?",
+    // "hi": "Hi there! What can I do for you?",
     "What's your name?": "My name is VoxAI. I'm an AI assistant created to help you. It's important to note that I am not a person, but a computer program designed to generate human-like responses.",
     "Who are you?": "My name is VoxAI. I'm an AI assistant created to help you. It's important to note that I am not a person, but a computer program designed to generate human-like responses.",
     "Who created you?": "I was created by Mr. Sourav Paitandy & my API is provided by Google.",

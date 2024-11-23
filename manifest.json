@@ -1,0 +1,12 @@
+{
+    "permissions": [
+      "launchQueue",
+      "getInstalledRelatedApps"
+    ],
+    "related_applications": [
+      {
+        "platform": "play",
+        "id": "com.example.app"
+      }
+    ]
+  }

@@ -1,4 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap');
+/* Option 1: Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+/* Option 2: Plus Jakarta Sans */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&display=swap');
+
+/* Option 3: Outfit */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -28,7 +36,7 @@
 
   :root {
     --scrollbar-track: #e5e7eb; /* bg-gray-200 */
-    --scrollbar-thumb: #9ca3af; /* bg-gray-400 */
+    --scrollbar-thumb: #363738; /* bg-gray-400 9ca3af*/
     /* --scrollbar-thumb-hover: #4b5563; bg-gray-600 */
   }
 
@@ -44,3 +52,31 @@ body {
     padding: 0;
 }
 
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes fade-out {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+.fade-in { animation: fade-in 0.3s ease-in-out; }
+.fade-out { animation: fade-out 0.3s ease-in-out; }
+
+@keyframes shrink-progress {
+  from { width: 100%; }
+  to { width: 0%; }
+}
+
+.animate-shrink-progress {
+  animation: shrink-progress linear forwards;
+}
+
+.video-div{
+  background-image: url('/demo-pic1.png');
+  /* aspect-ratio: maintain; */
+  background-size: cover;
+  /* background-position: center; */
+  /* background-repeat: no-repeat;
+  backdrop-filter: opacity(50); */
+}

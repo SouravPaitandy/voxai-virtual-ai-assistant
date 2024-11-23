@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
-import { useTheme } from './ThemeContext';
+import  useTheme  from '../context/ThemeContext';
 import useForceScrollTop from './useForceScrollTop';
 
 const PrivacyPolicy = () => {
+  const feedbackEmail = "souravtempmail1@gmail.com"; // Replace with your actual email address
   const { isDark } = useTheme();
   useForceScrollTop();
 
@@ -57,7 +58,7 @@ const PrivacyPolicy = () => {
           <section>
             <h2 className={`text-2xl font-semibold mb-3 ${isDark ? 'text-blue-300' : 'text-blue-500'}`}>7. Contact Us</h2>
             <p>If you have any questions about this Privacy Policy, please contact us at:</p>
-            <p className="mt-2">Email: souravtempmail1@gmail.com</p>
+            <p className="mt-2 hover:underline text-lg text-emerald-500"><a href={`mailto:${feedbackEmail}?subject=Feedback%20for%20VoxAI%20Assistant`}>Email</a> </p>
           </section>
         </div>
       </div>

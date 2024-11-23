@@ -1,0 +1,33 @@
+/* Control-bar */
+@media (min-width: 728px) and (max-width: 1023px) {
+  .control-bar {
+      max-width: 56rem /* 672px */;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1099px) {
+    .control-bar {
+        max-width: 42rem /* 672px */;
+    }
+  }
+  @media (min-width: 1100px) {
+    .control-bar {
+        max-width: 56rem /* 896px */;
+    }
+  }
+
+  /* Sidebar */
+  @media (min-width: 1100px){
+    .cross-btn {
+        display: none;
+    }
+  }
+
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
