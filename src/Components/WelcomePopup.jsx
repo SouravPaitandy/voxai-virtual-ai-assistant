@@ -56,7 +56,7 @@ const WelcomePopup = ({ isDark, onClose }) => {
                 : 'bg-blue-100 text-blue-600'
             }`}
           >
-            <img src="\Designer (2).png" alt="VoxAI"  width={50} height={50}/>
+            <img src="\Designer(2).png" alt="VoxAI"  width={50} height={50}/>
           </div>
           <span className='animate-ping absolute inline-flex h-20 w-20 rounded-full opacity-85 bg-blue-700'></span>
         </div>

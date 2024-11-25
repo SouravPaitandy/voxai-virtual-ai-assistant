@@ -872,7 +872,7 @@ const useCases = [
 const statistics = [
   { value: '99.9%', label: 'Uptime' },
   { value: '5K+', label: 'Voice Commands Processed' },
-  { value: '150+', label: 'Countries' },
+  { value: '10+', label: 'Cities' },
   { value: '4.9/5', label: 'User Rating' }
 ];
 
@@ -964,7 +964,7 @@ const resourceLinks = [
   },
   {
     name: 'Support Center',
-    link: 'mailto:souravpaitandy.gmail.com?subject=Support%20Query%20for%20VoxAI%20Assistant'
+    link: 'mailto:souravpaitandy.work.gmail.com?subject=Support%20Query%20for%20VoxAI%20Assistant'
   }
 ];
 
