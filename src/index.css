@@ -80,3 +80,21 @@ body {
   /* background-repeat: no-repeat;
   backdrop-filter: opacity(50); */
 }
+
+@keyframes pulse-slow {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
+}
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+@keyframes blob {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(50px, 50px) scale(1.2); }
+}
+.animate-blob {
+  animation: blob 10s infinite;
+}

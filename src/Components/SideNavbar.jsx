@@ -1,172 +1,252 @@
 /* eslint-disable react/prop-types */
-// import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import '../glassmorphism.css';
-import { MdFeedback, MdInfoOutline, MdClose } from 'react-icons/md';
-import { FaGithub, FaLinkedin, FaCode } from 'react-icons/fa';
+// import React from 'react';
+// import { Link } from 'react-router-dom';
+import { 
+  MdFeedback, 
+  MdInfoOutline, 
+  MdClose
+} from 'react-icons/md';
+import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { GiWorld } from 'react-icons/gi';
-import './Components.css'
 
-const SideNavbar = ({ isDark, showSidebar, setShowSidebar, toggleWhatsNew }) => {
+const SideNavbar = ({ 
+  isDark, 
+  showSidebar, 
+  setShowSidebar, 
+  toggleWhatsNew
+}) => {
   const currentYear = new Date().getFullYear();
-  const feedbackEmail = "souravtempmail1@gmail.com";
+  const feedbackEmail = "souravpaitandy.work@gmail.com";
+
+  // Accessibility: Add keyboard support for closing sidebar
+  const handleKeyClose = (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      setShowSidebar(false);
+    }
+  };
 
   return (
-    <div 
-      className={`z-40 fixed inset-y-0 w-[80%] md:w-72 ${!showSidebar ? ' -left-[38rem] md:-left-72' : 'left-0'} transition-transform duration-300 
-        ${isDark ? 'bg-slate-800/95' : 'bg-slate-100/95'} backdrop-blur-md
-        md:rounded-r-xl md:h-[98%] md:top-2 md:inset-y-auto shadow-2xl font-sans`}
-      onMouseLeave={() => setShowSidebar(false)}
-    >
-      {/* Close button for mobile/Tab */}
-      <button
-        onClick={() => setShowSidebar(false)}
-        className={`cross-btn absolute top-1 right-4 p-2 rounded-full ${isDark ? 'hover:bg-gray-700' : 'hover:bg-gray-200'}`}
+    <>
+      {/* Mobile Hamburger Button */}
+      {/* <button 
+        onClick={() => setShowSidebar(true)}
+        aria-label="Open sidebar menu"
+        className={`
+          fixed z-50 top-4 left-4 p-2 rounded-full shadow-lg 
+          transition-all duration-300 ease-in-out
+          ${showSidebar ? 'opacity-0 invisible' : 'opacity-100 visible'}
+          ${isDark ? 'bg-slate-700 text-white' : 'bg-white text-black'}
+          md:hidden hover:scale-110
+        `}
       >
-        <MdClose size={24} />
-      </button>
+        <MdMenu size={24} />
+      </button> */}
 
-      <div className="container h-full px-6 md:px-8 py-6 md:py-8 flex flex-col justify-between">
-        {/* Top Section */}
-        <div className="space-y-6 md:space-y-4 mt-8 md:mt-2">
-          {/* Description */}
-          <div className="text-left">
-            <p className={`mb-4 text-sm md:text-base font-medium ${
-              isDark ? 'text-gray-400' : 'text-gray-600'
-            }`}>
-              Your voice-activated intelligent companion
+      {/* Overlay for mobile */}
+      {showSidebar && (
+        <div 
+          className={`
+            fixed inset-0 z-30 bg-black/50 md:hidden
+            transition-opacity duration-300 ease-in-out
+            backdrop-blur-md
+            ${showSidebar ? 'opacity-100' : 'opacity-0'}
+          `}
+          onClick={() => setShowSidebar(false)}
+          aria-hidden="true"
+        />
+      )}
+
+      {/* Side Navbar */}
+      <div 
+        className={`
+          fixed inset-y-0 w-[80%] z-40 
+          transition-all duration-300 ease-in-out
+          ${!showSidebar 
+            ? '-left-[38rem] md:-left-72 ' 
+            : 'left-0'}
+          md:w-72 md:left-4 md:top-2 md:bottom-4
+          ${isDark ? 'bg-slate-800' : 'bg-white'}
+          rounded-r-xl md:rounded-xl
+          shadow-2xl overflow-hidden
+        `}
+        role="navigation"
+        aria-label="Side Navigation"
+        aria-hidden={!showSidebar}
+        onMouseLeave={()=> setShowSidebar(false)}
+      >
+        {/* Close Button */}
+        <button
+          onClick={() => setShowSidebar(false)}
+          onKeyDown={handleKeyClose}
+          aria-label="Close sidebar"
+          tabIndex={showSidebar ? 0 : -1}
+          className={`
+            lg:hidden absolute top-4 right-4 z-50 p-2 rounded-full
+            transition-all duration-300 ease-in-out
+            ${showSidebar 
+              ? 'opacity-100 scale-100' 
+              : 'opacity-0 scale-75'}
+            ${isDark 
+              ? 'hover:bg-slate-700 text-gray-300 hover:text-white' 
+              : 'hover:bg-gray-100 text-gray-600 hover:text-black'}
+          `}
+        >
+          <MdClose size={24} />
+        </button>
+
+        {/* Navbar Content */}
+        <div className="h-full flex flex-col overflow-y-auto">
+          <div className="p-6 space-y-6 flex-grow">
+            {/* App Description */}
+            <div>
+              {/* <h2 className={`
+                text-2xl font-bold mb-2
+                ${isDark ? 'text-blue-300' : 'text-blue-700'}
+              `}>
+                VoxAI Assistant
+              </h2> */}
+              <p className={`
+                text-sm mt-4 mb-4
+                ${isDark ? 'text-gray-400' : 'text-gray-600'}
+              `}>
+                Your intelligent voice-activated companion
+              </p>
+
+              <a 
+                href={`mailto:${feedbackEmail}?subject=VoxAI%20Feedback`}
+                className={`
+                  inline-flex items-center text-sm py-2 px-3 rounded-lg
+                  transition duration-300 group
+                  ${isDark 
+                    ? 'hover:bg-slate-700 text-gray-300' 
+                    : 'hover:bg-blue-50 text-blue-600'}
+                `}
+              >
+                <MdFeedback className="mr-2 group-hover:animate-bounce" size={18} />
+                Give Feedback
+              </a>
+            </div>
+
+            {/* Social & Connect Section */}
+            <div>
+              <h3 className={`
+                text-lg font-semibold mb-3
+                ${isDark ? 'text-blue-300' : 'text-blue-700'}
+              `}>
+                Connect
+              </h3>
+              <div className="space-y-2">
+                {[
+                  { 
+                    Icon: FaTwitter, 
+                    href: "https://x.com/PaitandySourav", 
+                    label: "X (Twitter)" 
+                  },
+                  { 
+                    Icon: FaGithub, 
+                    href: "https://github.com/SouravPaitandy", 
+                    label: "GitHub" 
+                  },
+                  { 
+                    Icon: FaLinkedin, 
+                    href: "https://www.linkedin.com/in/sourav-paitandy/", 
+                    label: "LinkedIn" 
+                  }
+                ].map(({ Icon, href, label }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`
+                      flex items-center py-2 px-3 rounded-lg group
+                      transition duration-300
+                      ${isDark 
+                        ? 'hover:bg-slate-700 text-gray-300' 
+                        : 'hover:bg-gray-100 text-gray-700'}
+                    `}
+                  >
+                    <Icon 
+                      className={`
+                        mr-2 group-hover:scale-110 transition
+                        ${isDark ? 'text-gray-400' : 'text-gray-600'}
+                      `} 
+                      size={18} 
+                    />
+                    {label}
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {/* About & More Section */}
+            <div>
+              <h3 className={`
+                text-lg font-semibold mb-3
+                ${isDark ? 'text-blue-300' : 'text-blue-700'}
+              `}>
+                About
+              </h3>
+              <div className="space-y-2">
+                {[
+                  { 
+                    Icon: GiWorld, 
+                    action: () => window.open("https://portfolio-sourav-paitandy.vercel.app/", "_blank"),
+                    label: "Created by Sourav Paitandy" 
+                  },
+                  { 
+                    Icon: MdInfoOutline, 
+                    action: toggleWhatsNew,
+                    label: "What's New" 
+                  },
+                  { 
+                    Icon: MdInfoOutline, 
+                    action: () => {/* Navigate to privacy policy */},
+                    label: "Privacy Policy" 
+                  }
+                ].map(({ Icon, action, label }) => (
+                  <button
+                    key={label}
+                    onClick={action}
+                    className={`
+                      w-full text-left flex items-center py-2 px-3 rounded-lg group
+                      transition duration-300
+                      ${isDark 
+                        ? 'hover:bg-slate-700 text-gray-300' 
+                        : 'hover:bg-gray-100 text-gray-700'}
+                    `}
+                  >
+                    <Icon 
+                      className={`
+                        mr-2 group-hover:scale-110 transition
+                        ${isDark ? 'text-gray-400' : 'text-gray-600'}
+                      `} 
+                      size={18} 
+                    />
+                    {label}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Footer */}
+          <div className={`
+            p-6 border-t
+            ${isDark 
+              ? 'bg-slate-900/50 border-slate-700 text-gray-500' 
+              : 'bg-gray-50 border-gray-200 text-gray-600'}
+          `}>
+            <p className="text-sm mb-2">
+              Made with <span className="text-red-500">❤️</span> by Sourav
             </p>
-            <a 
-              href={`mailto:${feedbackEmail}?subject=Feedback%20for%20VoxAI%20Assistant`}
-              className={`inline-flex items-center text-sm transition duration-300 
-                hover:text-blue-600 dark:hover:text-blue-400 p-2 -ml-2`}
-            >
-              <MdFeedback size={18} className="mr-2" />
-              <span>Give your valuable feedback</span>
-            </a>
+            <p className="text-xs">
+              © {currentYear} VoxAI Assistant. All rights reserved.
+            </p>
           </div>
-
-          {/* Connect Section */}
-          <div className="text-left">
-            <h3 className={`text-lg md:text-xl font-bold mb-3 ${
-              isDark ? 'text-blue-400' : 'text-blue-600'
-            }`}>
-              Connect With Us
-            </h3>
-            <div className="flex flex-col space-y-3">
-              {/* Social Links */}
-              <a 
-                href="https://x.com/PaitandySourav" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="opacity-50 hover:opacity-100 transition-opacity duration-300 p-2 -ml-2"
-              >
-                <img 
-                  src={isDark 
-                    ? "https://img.icons8.com/?size=100&id=phOKFKYpe00C&format=png&color=FFFFFF" 
-                    : "https://img.icons8.com/?size=100&id=phOKFKYpe00C&format=png&color=000000"
-                  } 
-                  alt="X" 
-                  className="w-5 h-5 inline-block align-middle"
-                />
-                <span className="ml-2 text-sm md:text-base">X</span>
-              </a>
-
-              <a 
-                href="https://github.com/SouravPaitandy" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="opacity-50 hover:opacity-100 inline-flex items-center 
-                  transition-colors duration-300 p-2 -ml-2"
-              >
-                <FaGithub size={18} className="mr-2" />
-                <span className="text-sm md:text-base">GitHub</span>
-              </a>
-
-              <a 
-                href="https://www.linkedin.com/in/sourav-paitandy/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center transition-colors duration-300 
-                  opacity-50 hover:opacity-100 hover:text-blue-700 
-                  dark:hover:text-gray-200 p-2 -ml-2"
-              >
-                <FaLinkedin size={18} className="mr-2" />
-                <span className="text-sm md:text-base">LinkedIn</span>
-              </a>
-            </div>
-
-            {/* Privacy Policy Link */}
-            <div className="mt-4">
-              <Link 
-                to="/privacy-policy" 
-                className="inline-flex items-center transition duration-300 
-                  opacity-50 hover:opacity-100 hover:text-blue-600 
-                  dark:hover:text-blue-400 p-2 -ml-2"
-              >
-                <MdInfoOutline size={18} className="mr-2" />
-                <span className="text-sm md:text-base">Privacy Policy</span>
-              </Link>
-            </div>
-          </div>
-
-          {/* About Section */}
-          <div className="text-left">
-            <h3 className={`text-lg md:text-xl font-bold mb-3 ${
-              isDark ? 'text-blue-400' : 'text-blue-600'
-            }`}>
-              About
-            </h3>
-            <div className="flex flex-col space-y-3 md:space-y-0">
-              <a 
-                href="https://portfolio-sourav-paitandy.vercel.app/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center transition duration-300 
-                  hover:text-blue-600 dark:hover:text-blue-400 p-2 -ml-2"
-              >
-                <GiWorld size={18} className="mr-2" />
-                <span className="text-sm md:text-base">Created by Sourav Paitandy</span>
-              </a>
-
-              {/* <a 
-                href="https://ai.google.dev/gemini-api" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center transition duration-300 
-                  hover:text-green-600 dark:hover:text-green-400 p-2 -ml-2"
-              >
-                <FaCode size={18} className="mr-2" />
-                <span className="text-sm md:text-base">Powered by Gemini API</span>
-              </a> */}
-
-              <button 
-                onClick={toggleWhatsNew}
-                className="inline-flex items-center transition duration-300 
-                  hover:text-blue-600 dark:hover:text-blue-400 p-2 -ml-2"
-              >
-                <MdInfoOutline size={18} className="mr-2" />
-                <span className="text-sm md:text-base">View latest updates</span>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* Footer Section */}
-        <div className="text-left mt-8 md:mt-0">
-          <p className={`text-6xl md:text-3xl font-[900] opacity-30 ${
-            isDark ? 'text-gray-400' : 'text-gray-600'
-          }`}>
-            Made with <span className="text-red-400">❤️</span>
-          </p>
-          <p className={`mt-4 text-base md:text-xs ${
-            isDark ? 'text-gray-500' : 'text-gray-600'
-          }`}>
-            © {currentYear} VoxAI Assistant. <br/>All rights reserved.
-          </p>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
