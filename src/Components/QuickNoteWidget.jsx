@@ -7,7 +7,7 @@ const QuickNoteWidget = ({ isDark }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="fixed bottom-40 lg:bottom-4 right-2 lg:right-4 z-40">
+    <div className="fixed bottom-40 lg:bottom-4 right-2 lg:right-4 z-30">
       {/* Toggle Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}

@@ -643,7 +643,7 @@ const VoxAIAssistant = () => {
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="fixed hidden lg:inline bottom-24 right-4 z-40 p-2 rounded-full bg-blue-500 text-white shadow-lg hover:bg-blue-600 transition-all duration-300"
+          className="fixed hidden lg:inline bottom-24 right-4 z-30 p-2 rounded-full bg-blue-500 text-white shadow-lg hover:bg-blue-600 transition-all duration-300"
         >
           <ArrowUp size={24} />
         </button>
@@ -651,7 +651,7 @@ const VoxAIAssistant = () => {
       {showScrollDown && (
         <button
           onClick={scrollToDown}
-          className="fixed hidden lg:inline bottom-24 right-4 z-40 p-2 rounded-full bg-blue-500 text-white shadow-lg hover:bg-blue-600 transition-all duration-300"
+          className="fixed hidden lg:inline bottom-24 right-4 z-30 p-2 rounded-full bg-blue-500 text-white shadow-lg hover:bg-blue-600 transition-all duration-300"
         >
           <ArrowDown size={24} />
         </button>

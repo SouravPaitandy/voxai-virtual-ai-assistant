@@ -7,7 +7,7 @@ import {
   MdClose
 } from 'react-icons/md';
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
-import { GiWorld } from 'react-icons/gi';
+import { Globe, GlobeLock } from 'lucide-react';
 
 const SideNavbar = ({ 
   isDark, 
@@ -46,7 +46,7 @@ const SideNavbar = ({
       {showSidebar && (
         <div 
           className={`
-            fixed inset-0 z-30 bg-black/50 md:hidden
+            fixed inset-0 z-40 bg-black/50 md:hidden
             transition-opacity duration-300 ease-in-out
             backdrop-blur-md
             ${showSidebar ? 'opacity-100' : 'opacity-0'}
@@ -63,8 +63,8 @@ const SideNavbar = ({
           transition-all duration-300 ease-in-out
           ${!showSidebar 
             ? '-left-[38rem] md:-left-72 ' 
-            : 'left-0'}
-          md:w-72 md:left-4 md:top-2 md:bottom-4
+            : 'left-0 md:left-4 visible'}
+          md:w-72 md:top-2 md:bottom-4
           ${isDark ? 'bg-slate-800' : 'bg-white'}
           rounded-r-xl md:rounded-xl
           shadow-2xl overflow-hidden
@@ -106,7 +106,7 @@ const SideNavbar = ({
                 VoxAI Assistant
               </h2> */}
               <p className={`
-                text-sm mt-4 mb-4
+                text-sm mt-8 md:mt-4 mb-4
                 ${isDark ? 'text-gray-400' : 'text-gray-600'}
               `}>
                 Your intelligent voice-activated companion
@@ -190,7 +190,7 @@ const SideNavbar = ({
               <div className="space-y-2">
                 {[
                   { 
-                    Icon: GiWorld, 
+                    Icon: Globe, 
                     action: () => window.open("https://portfolio-sourav-paitandy.vercel.app/", "_blank"),
                     label: "Created by Sourav Paitandy" 
                   },
@@ -200,8 +200,8 @@ const SideNavbar = ({
                     label: "What's New" 
                   },
                   { 
-                    Icon: MdInfoOutline, 
-                    action: () => {/* Navigate to privacy policy */},
+                    Icon: GlobeLock, 
+                    action: () => window.open("https://voxai-project.vercel.app/privacy-policy", "_blank"),
                     label: "Privacy Policy" 
                   }
                 ].map(({ Icon, action, label }) => (
@@ -218,7 +218,7 @@ const SideNavbar = ({
                   >
                     <Icon 
                       className={`
-                        mr-2 group-hover:scale-110 transition
+                        mr-2 group-hover:animate-bounce transition
                         ${isDark ? 'text-gray-400' : 'text-gray-600'}
                       `} 
                       size={18} 
