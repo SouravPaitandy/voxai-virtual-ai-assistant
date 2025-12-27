@@ -1,0 +1,22 @@
+{
+  "name": "VoxAI - AI Virtual Assistant",
+  "short_name": "VoxAI",
+  "description": "Next-generation AI virtual assistant with local intelligence and privacy-first architecture.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/Designer(2).png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/Designer(2).png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

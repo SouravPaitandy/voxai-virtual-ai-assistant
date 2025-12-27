@@ -1,38 +1,63 @@
 # VoxAI - AI-Powered Virtual Assistant 🤖
-
-[![Deployed on Vercel](public/Designer(2).png)](https://voxai-project.vercel.app/)
+<p align="center">
+  <a href="https://voxai-project.vercel.app/">
+    <img src="public/Designer(2).png" alt="Deployed on Vercel" width="200" height="200">
+  </a>
+</p>
 
 ## 🌟 Overview
 
-VoxAI is a cutting-edge AI-powered virtual assistant, context-aware responses to user queries. Built with modern web technologies including React and Vite, VoxAI offers a seamless and intuitive user experience.
+VoxAI is a next-generation virtual assistant that lives in your browser. Unlike traditional cloud-based assistants, VoxAI prioritizes **Privacy** and **Local Intelligence**. It features a unique "Smart Message Indexer" that turns your conversation history into a semantic search engine—your personal "Second Brain"—without ever sending your data to a server.
 
-## ✨ Features
+Built with React 18 and Vite, it delivers a cinematic, 60fps experience with premium glassmorphism aesthetics.
 
-<!-- - 🤖 AI-powered conversations using Gemini API -->
+## ✨ Key Features
 
-- 💨 Lightning-fast performance with Vite
-- 🎯 Modern and intuitive user interface
-- 🔄 Real-time response generation
-- 📱 Responsive design for all devices
-- 🌐 Easy deployment on Vercel
+### 🧠 Smart Message Indexer
+
+- **Instant Recall**: Search your entire chat history by *concept*, not just keywords.
+- **On-Device Vector Database**: Converts messages into semantic vector embeddings stored locally (IndexDB).
+- **Zero Privacy Compromise**: Your "Second Brain" lives on your device.
+
+### 🎨 Cinematic Experience
+
+- **Hollywood-Style Splash Screen**: Immersive "System Startup" animation sequence on load.
+- **Glassmorphism UI**: Premium, translucent design system with dynamic gradients and blur effects.
+- **Voice Visualizer**: Real-time audio waveform visualization during speech interaction.
+
+### 🗣️ Hybrid Voice Engine
+
+- **Browser Synthesis**: Instant, unlimited local TTS support.
+- **ElevenLabs Integration (Coming Soon)**: Upcoming support for ultra-realistic premium AI voices.
+- **Hands-Free Mode**: "Auto-Submit" voice commands for fluid conversation.
+
+### 🔒 Privacy-First Architecture
+
+- **Local Storage**: All conversations, settings, and vector indices are stored in the browser.
+- **Transparent Policy**: Dedicated Privacy Policy page explaining exactly how data is handled.
+- **Data Sovereignty**: You own your data. Clear it instantly with one click.
+
+### 🛠️ Productivity Tools
+
+- **Rich Markdown**: Code blocks (with syntax highlighting), tables, and formatted text.
+- **Real-time Weather**: Integrated Open-Meteo API for instant global weather reports.
+- **Context-Aware**: Remembers conversation context for natural multi-turn dialogue.
 
 ## 🛠️ Tech Stack
 
-- **Frontend Framework**: React
-- **Build Tool**: Vite
-- **AI Integration**: Google Gemini API
-- **Deployment**: Vercel
-- **Styling**: Tailwind, styled-components from several providers
-
-<!-- - **State Management**: [If applicable - e.g., Redux, Context API] -->
+- **Frontend Core**: React 18, Vite
+- **State Management**: Zustand (for high-performance global state)
+- **AI Intelligence**: Google Gemini API (Multimodal LLM)
+- **Styling & Animation**: Tailwind CSS, Framer Motion
+- **Voice & Audio**: Web Speech API, ElevenLabs API (Planned)
+- **Data & Storage**: LocalStorage, IndexDB (Vector Store)
 
 ## 🚀 Getting Started
 
 ### Prerequisites
 
-- Node.js (v14 or higher)
-- npm or yarn
-- Google Gemini API key
+- Node.js (v18 or higher)
+- Google Gemini API Key
 
 ### Installation
 
@@ -41,92 +66,46 @@ VoxAI is a cutting-edge AI-powered virtual assistant, context-aware responses to
    ```bash
    git clone https://github.com/SouravPaitandy/voxai-virtual-ai-assistant.git
    ```
-2. Navigate to the project directory:
+
+2. Navigate to the directory:
 
    ```bash
-   cd voxai-project
+   cd voxai-virtual-ai-assistant
    ```
+
 3. Install dependencies:
 
    ```bash
    npm install
-   # or
-   yarn install
    ```
 
-### Configuration
-
-1. Create a `.env` or `.env.local` file in the root directory:
+4. Create a `.env` file:
 
    ```env
-   VITE_API_URL=https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=YOUR_API_KEY
+   VITE_GEMINI_API_KEY=your_api_key_here
    ```
-2. Replace `YOUR_API_KEY` with your actual Gemini API key.
 
-### Development
-
-Run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-Visit `http://localhost:5173` to view the application.
-
-## 🚀 Deployment
-
-The application is automatically deployed on Vercel through continuous integration. Every push to the main branch triggers a new deployment.
-
-### Manual Deployment
-
-connect Your GitHub repo with Vercel or,
-
-1. Install Vercel CLI:
+5. Start the development server:
 
    ```bash
-   npm install -g vercel
-   ```
-2. Deploy:
-
-   ```bash
-   vercel
+   npm run dev
    ```
 
 ## 🤝 Contributing
 
-We welcome contributions to VoxAI! Here's how you can help:
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+## 📄 License
 
-Please ensure your PR adheres to the following guidelines:
-
-<!-- - Keep the code clean and well-documented -->
-
-- Update the README.md with details of changes if applicable
-- Add appropriate comments to your code
-
-<!-- ## 📝 License -->
-
-<!-- [Your chosen license - e.g., MIT] - See [LICENSE](LICENSE) file for details -->
-
-## 🙏 Acknowledgments
-
-- Google Gemini API for providing the AI capabilities
-- The React and Vite teams for their amazing tools
-- Lucide icons for their amazing icons
+This project is open-source and available under the [MIT License](LICENSE).
 
 ## 📞 Contact
 
-[Portfolio Website](https://portfolio-sourav-paitandy.vercel.app/ "Visit my Website") ,  [Email](mailto:souravpaitandy.work.gmail.com?subject=Support/Query%20for%20VoxAI%20Assistant "Contact via email")
-
-Project Link: [https://github.com/SouravPaitandy/voxai-virtual-ai-assistant](https://github.com/SouravPaitandy/voxai-virtual-ai-assistant)
+- [Portfolio Website](https://www.souravpaitandy.me)
+- [Twitter](https://x.com/PaitandySourav)
+- [LinkedIn](https://linkedin.com/in/sourav-paitandy)
 
 ---
-
-⭐️ If you find VoxAI helpful, please consider giving it a star on GitHub!
+<p align="center">
+  Built with ❤️ by <a href="https://www.souravpaitandy.me">Sourav Paitandy</a>
+</p>

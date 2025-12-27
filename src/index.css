@@ -1,100 +1,93 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap');
-/* Option 1: Inter */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap");
 
-/* Option 2: Plus Jakarta Sans */
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&display=swap');
-
-/* Option 3: Outfit */
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-  html {
-    scrollbar-width: thin;
-    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
-  }
-
-  html::-webkit-scrollbar {
-    width: 8px;
-  }
-
-  html::-webkit-scrollbar-track {
-    background-color: var(--scrollbar-track);
-  }
-
-  html::-webkit-scrollbar-thumb {
-    background-color: var(--scrollbar-thumb);
-    border-radius: 4px;
-  }
-  
-  html::-webkit-scrollbar-thumb:hover {
-    background-color: var(--scrollbar-thumb-hover);
-  }
-
   :root {
-    --scrollbar-track: #e5e7eb; /* bg-gray-200 */
-    --scrollbar-thumb: #363738; /* bg-gray-400 9ca3af*/
-    /* --scrollbar-thumb-hover: #4b5563; bg-gray-600 */
+    /* Premium Light Mode */
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --primary: 252 59% 48%; /* Deep Violet */
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222 47% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 252 59% 90%; /* Soft Violet */
+    --accent-foreground: 222 47% 11.2%;
+
+    --radius: 0.75rem;
   }
 
   .dark {
-    --scrollbar-track: #1f2937; /* dark:bg-gray-800 */
-    --scrollbar-thumb: #4a5568; /* dark:bg-gray-600 */
-    --scrollbar-thumb-hover: #6b7280; /* dark:bg-gray-500 */
+    /* Cyber/Space Dark Mode */
+    --background: 222 47% 6%; /* Deep Space Blue */
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 10%; /* Slightly lighter than bg */
+    --card-foreground: 210 40% 98%;
+
+    --primary: 263 70% 60%; /* Vibrant Purple */
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
   }
 }
 
-body {
-    margin: 0;
-    padding: 0;
+@layer base {
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted rounded-full border-2 border-background hover:bg-primary/50;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--muted)) hsl(var(--background));
+  }
 }
 
-@keyframes fade-in {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-@keyframes fade-out {
-  0% { opacity: 1; }
-  100% { opacity: 0; }
-}
-.fade-in { animation: fade-in 0.3s ease-in-out; }
-.fade-out { animation: fade-out 0.3s ease-in-out; }
-
-@keyframes shrink-progress {
-  from { width: 100%; }
-  to { width: 0%; }
+@layer base {
+  * {
+    @apply border-gray-200 dark:border-gray-800;
+  }
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+  }
 }
 
-.animate-shrink-progress {
-  animation: shrink-progress linear forwards;
+/* Glassmorphism Utilities */
+.glass {
+  @apply bg-white/10 backdrop-blur-lg border border-white/20 shadow-lg;
 }
 
-.video-div{
-  background-image: url('/demo-pic1.png');
-  /* aspect-ratio: maintain; */
-  background-size: cover;
-  /* background-position: center; */
-  /* background-repeat: no-repeat;
-  backdrop-filter: opacity(50); */
+.glass-dark {
+  @apply bg-black/30 backdrop-blur-xl border border-white/10 shadow-xl;
 }
 
-@keyframes pulse-slow {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-}
-.animate-pulse-slow {
-  animation: pulse-slow 3s ease-in-out infinite;
-}
-.animation-delay-2000 {
-  animation-delay: 2s;
-}
-@keyframes blob {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(50px, 50px) scale(1.2); }
-}
-.animate-blob {
-  animation: blob 10s infinite;
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-400;
 }
