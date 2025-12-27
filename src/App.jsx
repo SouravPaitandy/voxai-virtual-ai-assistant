@@ -10,7 +10,7 @@ import AssistantPage from "./pages/Assistant";
 import SettingsPage from "./pages/Settings";
 import HistoryPage from "./pages/History";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
-import { SplashScreen } from "./components/ui/SplashScreen";
+import { SplashScreen } from "./Components/ui/SplashScreen";
 
 function App() {
   // Watch theme changes and apply to HTML element
