@@ -1,15 +1,15 @@
 import { DashboardLayout } from "../../layouts/DashboardLayout";
-import { Card } from "../../components/ui/Card";
+import { Card } from "../../Components/ui/Card";
 import { useStore } from "../../store";
 import {
   History,
   Trash2,
   Download,
   Search,
-  MessageSquare,
   Edit2,
+  MessageSquare,
 } from "lucide-react";
-import { Button } from "../../components/ui/Button";
+import { Button } from "../../Components/ui/Button";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 

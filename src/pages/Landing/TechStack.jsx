@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Card } from "../../components/ui/Card";
+import { Card } from "../../Components/ui/Card";
 import { Code2, Cpu, Database, Globe, Layers, Zap } from "lucide-react";
 
 const technologies = [

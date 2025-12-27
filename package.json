@@ -14,6 +14,8 @@
     "@radix-ui/react-slider": "^1.2.1",
     "@shadcn/ui": "^0.0.4",
     "axios": "^1.7.7",
+    "baseline-browser-mapping": "^2.9.11",
+    "caniuse-lite": "^1.0.30001761",
     "clsx": "^2.1.1",
     "dotenv": "^16.4.5",
     "framer-motion": "^11.18.2",

@@ -3,8 +3,8 @@ import { useRef, useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Bot, User, Copy, ArrowDown } from "lucide-react";
 import { useStore } from "../../store";
-import MessageIndexer from "../../components/MessageIndexer";
-import { MarkdownRenderer } from "../../components/ui/MarkdownRenderer";
+import MessageIndexer from "../../Components/MessageIndexer";
+import { MarkdownRenderer } from "../../Components/ui/MarkdownRenderer";
 
 export const ChatInterface = ({ messages, isTyping, onQuickPrompt }) => {
   const messagesEndRef = useRef(null);

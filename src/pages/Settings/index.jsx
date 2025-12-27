@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useState, useEffect } from "react";
 import { DashboardLayout } from "../../layouts/DashboardLayout";
-import { Card, CardHeader, CardContent } from "../../components/ui/Card";
+import { Card, CardHeader, CardContent } from "../../Components/ui/Card";
 import { useStore } from "../../store";
 import {
   Save,
@@ -12,7 +12,7 @@ import {
   RotateCcw,
   Mic,
 } from "lucide-react";
-import { Button } from "../../components/ui/Button";
+import { Button } from "../../Components/ui/Button";
 import { motion } from "framer-motion";
 
 const SettingsToggle = ({ checked, onChange, label, description }) => (

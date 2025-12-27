@@ -10,8 +10,7 @@ import {
   Cpu,
   Eye,
 } from "lucide-react";
-import { Card } from "../../components/ui/Card";
-// import useForceScrollTop from "../../useForceScrollTop";
+import { Card } from "../../Components/ui/Card";
 
 const Section = ({ icon: Icon, title, children, delay }) => (
   <motion.div

@@ -1,4 +1,4 @@
-import { Sidebar } from "../components/app/Sidebar";
+import { Sidebar } from "../Components/app/Sidebar";
 import { useStore } from "../store";
 import { Menu } from "lucide-react";
 

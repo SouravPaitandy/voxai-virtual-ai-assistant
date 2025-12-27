@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Moon, Sun, Menu, X } from "lucide-react";
-import { Button } from "../../components/ui/Button";
+import { Button } from "../../Components/ui/Button";
 import { useStore } from "../../store"; // Context migration is key here!
 
 export const Navbar = () => {

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Card } from "../../components/ui/Card";
+import { Card } from "../../Components/ui/Card";
 import {
   Bot,
   CloudRain,

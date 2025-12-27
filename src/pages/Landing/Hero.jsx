@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Mic, Play, Sparkles } from "lucide-react";
-import { Button } from "../../components/ui/Button";
-import { Card } from "../../components/ui/Card";
+import { Button } from "../../Components/ui/Button";
+import { Card } from "../../Components/ui/Card";
 import { Link } from "react-router-dom";
 
 export const Hero = () => {
