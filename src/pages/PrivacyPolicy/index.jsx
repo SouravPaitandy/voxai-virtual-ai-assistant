@@ -11,7 +11,7 @@ import {
   Eye,
 } from "lucide-react";
 import { Card } from "../../components/ui/Card";
-import useForceScrollTop from "../../useForceScrollTop";
+// import useForceScrollTop from "../../useForceScrollTop";
 
 const Section = ({ icon: Icon, title, children, delay }) => (
   <motion.div
@@ -33,7 +33,7 @@ const Section = ({ icon: Icon, title, children, delay }) => (
 );
 
 const PrivacyPolicy = () => {
-  useForceScrollTop();
+  // useForceScrollTop();
   const lastUpdated = "December 28, 2025";
 
   return (
