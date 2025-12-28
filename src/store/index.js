@@ -1,6 +1,6 @@
-/* eslint-disable no-unused-vars */
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
+import { toast } from "./toastStore";
 
 /**
  * Centralized Zustand store for VoxAI application
@@ -84,7 +84,7 @@ export const useStore = create(
       // ========================================
       conversations: [],
       activeConversationId: null,
-      maxConversations: 20,
+      maxConversations: 5,
 
       // Create new conversation
       createConversation: () => {
@@ -92,13 +92,18 @@ export const useStore = create(
 
         // Check limit
         if (state.conversations.length >= state.maxConversations) {
-          console.warn("Maximum conversations reached");
+          toast({
+            title: "Limit Reached",
+            description: `You've reached the maximum of ${state.maxConversations} conversations. Please delete some to create new ones.`,
+            variant: "warning",
+          });
           return null;
         }
 
+        const id = `${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
         const newConversation = {
-          id: `conv_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
-          name: `Conversation ${state.conversations.length + 1}`,
+          id: `conv_${id}`,
+          name: `Conversation ${id.substr(0, 10)}`,
           createdAt: new Date().toISOString(),
           updatedAt: new Date().toISOString(),
           messages: [],

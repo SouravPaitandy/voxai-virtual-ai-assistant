@@ -130,7 +130,7 @@ const useHybridTTS = () => {
         setIsSpeaking(false);
       }
     },
-    [settings.ttsEngine, speakWithBrowser]
+    [speakWithBrowser]
   );
 
   /**

@@ -113,7 +113,7 @@ export const Hero = () => {
 
             <div className="absolute inset-0 m-auto w-48 h-48 rounded-full bg-background border border-white/10 shadow-2xl flex items-center justify-center z-20">
               <div className="w-32 h-32 rounded-full bg-gradient-to-br from-primary to-purple-800 flex items-center justify-center relative overflow-hidden group cursor-pointer hover:scale-105 transition-transform duration-500">
-                <div className="absolute inset-0 bg-[url('/noise.png')] opacity-20 mix-blend-overlay" />
+                <div className="absolute inset-0 bg-white/5 opacity-20 mix-blend-overlay" />
                 <Mic className="text-white w-12 h-12 relative z-10" />
 
                 {/* Ripple Effect */}

@@ -1,11 +1,17 @@
 import { CONFIG } from "../constants/config";
 import { rateLimiter } from "./rateLimiter";
+import { toast } from "../store/toastStore";
 
 /**
  * Fetches specific answer/response from the Gemini AI
  */
 export const getChatbotResponse = async (userMessage, contextMessages = []) => {
   if (!CONFIG.API_KEY) {
+    toast({
+      title: "Configuration Error",
+      description: "Gemini API Key is missing. Please check your settings.",
+      variant: "destructive",
+    });
     throw new Error("Gemini API Key is missing");
   }
 
@@ -28,6 +34,11 @@ export const getChatbotResponse = async (userMessage, contextMessages = []) => {
     // Check rate limits before making request
     const limitCheck = rateLimiter.canMakeRequest();
     if (!limitCheck.allowed) {
+      toast({
+        title: "Rate Limit Reached",
+        description: limitCheck.reason,
+        variant: "warning",
+      });
       throw new Error(limitCheck.reason);
     }
 
@@ -45,7 +56,13 @@ export const getChatbotResponse = async (userMessage, contextMessages = []) => {
     const data = await response.json();
 
     if (!response.ok) {
-      throw new Error(data.error?.message || "Failed to fetch AI response");
+      const errorMsg = data.error?.message || "Failed to fetch AI response";
+      toast({
+        title: "AI Response Error",
+        description: errorMsg,
+        variant: "destructive",
+      });
+      throw new Error(errorMsg);
     }
 
     // Extract text from Gemini response structure
@@ -62,6 +79,16 @@ export const getChatbotResponse = async (userMessage, contextMessages = []) => {
     return aiText;
   } catch (error) {
     console.error("AI API Error:", error);
+    if (
+      !error.message.includes("Rate Limit") &&
+      !error.message.includes("API Key")
+    ) {
+      toast({
+        title: "Connection Error",
+        description: "Failed to connect to VoxAI brain. Please try again.",
+        variant: "destructive",
+      });
+    }
     throw error;
   }
 };

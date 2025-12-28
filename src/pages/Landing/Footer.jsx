@@ -7,7 +7,7 @@ export const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           <div className="col-span-1 md:col-span-2">
-            <h2 className="text-2xl font-display font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-500">
+            <h2 className="text-2xl font-display font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-b from-black/50 to-black dark:from-white dark:to-slate-500">
               VoxAI
             </h2>
 

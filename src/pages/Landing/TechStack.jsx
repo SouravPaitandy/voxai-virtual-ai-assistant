@@ -88,7 +88,7 @@ export const TechStack = () => {
             <Zap className="w-4 h-4 mr-2" />
             Built for Performance
           </div>
-          <h2 className="text-4xl font-display font-bold mb-4">
+          <h2 className="text-4xl font-display font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-t from-black/50 to-black dark:from-white dark:to-slate-500">
             Powered by Modern Tech
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
@@ -106,9 +106,9 @@ export const TechStack = () => {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
             >
-              <Card className="h-full p-6 flex flex-col gap-4 hover:border-primary/30 transition-colors group bg-white/5 border-white/10">
+              <Card className="h-full p-6 flex flex-col gap-4 hover:border-primary/30 transition-colors duration-500 group bg-white/5 border-white/10">
                 <div
-                  className={`w-12 h-12 rounded-xl ${tech.bg} flex items-center justify-center ${tech.color} group-hover:scale-110 transition-transform duration-300`}
+                  className={`w-12 h-12 rounded-xl ${tech.bg} flex items-center justify-center ${tech.color} group-hover:scale-110 transition-transform duration-500 ease-out`}
                 >
                   <tech.icon className="w-6 h-6" />
                 </div>

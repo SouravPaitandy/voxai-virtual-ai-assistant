@@ -1,10 +1,11 @@
 /* eslint-disable react/prop-types */
 import { useRef, useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Bot, User, Copy, ArrowDown } from "lucide-react";
+import { Bot, User, Copy, ArrowDown, CheckCheck } from "lucide-react";
 import { useStore } from "../../store";
 import MessageIndexer from "../../Components/MessageIndexer";
 import { MarkdownRenderer } from "../../Components/ui/MarkdownRenderer";
+import { toast } from "../../store/toastStore";
 
 export const ChatInterface = ({ messages, isTyping, onQuickPrompt }) => {
   const messagesEndRef = useRef(null);
@@ -12,6 +13,29 @@ export const ChatInterface = ({ messages, isTyping, onQuickPrompt }) => {
   const chatContainerRef = useRef(null);
   const userName = useStore((state) => state.userName);
   const [showScrollButton, setShowScrollButton] = useState(false);
+  const [copiedId, setCopiedId] = useState(null);
+
+  const handleCopy = async (text, id) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopiedId(id);
+      toast({
+        title: "Copied",
+        description: "Text copied to clipboard",
+        variant: "success",
+        duration: 2000,
+      });
+      setTimeout(() => setCopiedId(null), 2000);
+    } catch (err) {
+      console.error("Failed to copy:", err);
+      toast({
+        title: "Error",
+        description: "Failed to copy text, please try again.",
+        variant: "destructive",
+        duration: 2000,
+      });
+    }
+  };
 
   // Auto-scroll to bottom when new messages arrive
   useEffect(() => {
@@ -69,15 +93,11 @@ export const ChatInterface = ({ messages, isTyping, onQuickPrompt }) => {
     }
   };
 
-  const copyToClipboard = (text) => {
-    navigator.clipboard.writeText(text);
-  };
-
   // Quick suggestion prompts
   const quickPrompts = [
     "What can you help me with?",
     "Tell me a joke",
-    "What's the weather like?",
+    "What's the current weather in Kolkata?",
     "Help me brainstorm ideas",
   ];
 
@@ -182,11 +202,19 @@ export const ChatInterface = ({ messages, isTyping, onQuickPrompt }) => {
                   {!isUser && (
                     <div className="flex items-center gap-2 mt-3 pt-3 border-t border-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                       <button
-                        onClick={() => copyToClipboard(message.content)}
-                        className="p-1.5 hover:bg-white/10 rounded-lg transition-colors text-muted-foreground hover:text-primary"
+                        onClick={() =>
+                          handleCopy(message.content, message.id || index)
+                        }
+                        className="flex items-center gap-1.5 p-1.5 hover:bg-white/10 rounded-lg transition-colors text-muted-foreground hover:text-primary"
                         title="Copy message"
                       >
-                        <Copy className="w-3.5 h-3.5" />
+                        {copiedId === (message.id || index) ? (
+                          <>
+                            <CheckCheck className="w-3.5 h-3.5 text-green-400" />
+                          </>
+                        ) : (
+                          <Copy className="w-3.5 h-3.5" />
+                        )}
                       </button>
                     </div>
                   )}

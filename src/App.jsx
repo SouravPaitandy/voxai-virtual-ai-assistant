@@ -4,13 +4,14 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { MemoryProvider } from "./context/MemoryContext";
 import { useStore } from "./store";
 
-// New Pages
 import LandingPage from "./LandingPage";
 import AssistantPage from "./pages/Assistant";
 import SettingsPage from "./pages/Settings";
 import HistoryPage from "./pages/History";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import { SplashScreen } from "./Components/ui/SplashScreen";
+import { SmoothScroll } from "./Components/ui/SmoothScroll";
+import { Toaster } from "./Components/ui/Toaster";
 
 function App() {
   // Watch theme changes and apply to HTML element
@@ -35,6 +36,8 @@ function App() {
       </AnimatePresence>
       {!isLoading && (
         <Router>
+          <SmoothScroll />
+          <Toaster />
           <Routes>
             {/* Public Routes */}
             <Route path="/" element={<LandingPage />} />

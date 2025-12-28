@@ -15,6 +15,8 @@ export const customAnswers = {
     "I'm not invented by a single person, I'm an AI model. I was created by Mr. Sourav Paitandy & my API is provided by Google.",
   "What can you do?":
     "I can assist you with various tasks such as answering questions, providing information, and helping with simple calculations. Feel free to ask me anything!",
+  "What can you help me with?":
+    "I can help you with a wide range of tasks, including answering questions, providing information, Giving weather info by City names, Open any apps or website for you, and helping with simple calculations. Feel free to ask me anything!",
   "Tell me a joke":
     "Why don't scientists trust atoms? Because they make up everything!",
   "What's the meaning of life?":

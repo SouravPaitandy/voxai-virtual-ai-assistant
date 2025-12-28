@@ -5,6 +5,7 @@
 
 const ELEVENLABS_API_KEY = import.meta.env.VITE_ELEVENLABS_API_KEY || "";
 const ELEVENLABS_API_URL = "https://api.elevenlabs.io/v1";
+import { toast } from "../store/toastStore";
 
 // Popular free voices
 const ELEVENLABS_VOICES = {
@@ -144,6 +145,20 @@ export async function generateElevenLabsSpeech(
     return await response.blob();
   } catch (error) {
     console.error("ElevenLabs TTS Error:", error);
+    if (error.message === "QUOTA_EXCEEDED") {
+      toast({
+        title: "Voice Limit Reached",
+        description:
+          "ElevenLabs character quota exceeded. Switching to standard voice.",
+        variant: "warning",
+      });
+    } else if (error.message === "UNAUTHORIZED") {
+      toast({
+        title: "Authentication Failed",
+        description: "ElevenLabs API Key invalid or expired.",
+        variant: "destructive",
+      });
+    }
     throw error;
   }
 }

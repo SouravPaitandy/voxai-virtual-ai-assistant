@@ -66,7 +66,7 @@ export const Features = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl font-display font-bold mb-4"
+            className="text-4xl font-display font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-t from-black/50 to-black dark:from-white dark:to-slate-500"
           >
             More Than Just a Voice Assistant
           </motion.h2>

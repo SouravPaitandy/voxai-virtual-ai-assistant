@@ -21,6 +21,7 @@
     "framer-motion": "^11.18.2",
     "gsap": "^3.12.5",
     "hammerjs": "^2.0.8",
+    "lenis": "^1.3.16",
     "lucide-react": "^0.454.0",
     "openai": "^5.5.1",
     "openmeteo": "^1.1.4",
